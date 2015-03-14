@@ -1,11 +1,11 @@
 Catnap
 ======
 
-A minimalist library designed for ready-to-go auth based on JSON Web Tokens, and and a Grunt task to generate boilerplate code for new routes.  The goal of this project is to generate quick RESTful APIs that can support the development of front-end applications.
+A minimalist Node.js/Express project template designed for ready-to-go auth and quick generation of new routes.
 
 Creating new routes
 -------------------
-In the catnap directory, run:
+Use Grunt to quickly generate boilerplate code for new routes. In the catnap directory, run:
 
 	$ grunt makeRoute:objectName
 
@@ -15,7 +15,9 @@ The result will be the creation of several files with Node/Express code:
 - controllers/objectName.js
 - routes/objectName.js
 
-The task will also add a line to the server.js, adding the new routes to the server.
+The makeRoute task will also add a line to the server.js file, adding the new routes to the server.
+
+Templates for the route generation can be found and edited in folder Grunt/templates.
 
 Auth
 ----
@@ -26,4 +28,4 @@ A sign up route in the auth is in development.  For the time being, users must b
 
 Database
 --------
-MongoDB and Mongoose
+MongoDB and Mongoose.
