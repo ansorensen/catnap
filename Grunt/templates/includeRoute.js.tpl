@@ -1,0 +1,1 @@
+<%= route %> = require('<%= requireRoutePauth %>/<% route %>.js')(app);
