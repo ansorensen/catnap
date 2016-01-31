@@ -1,6 +1,6 @@
 var config = {
-    database: 'mongodb://localhost/appName',
-	secret: 'TheSecretofNimh'
+    mongoURL: @@mongoURL // 'mongodb://localhost/appName',
+	secret: @@secret // 'TheSecretofNimh'
 };
 
 module.exports = config;

@@ -3,10 +3,10 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
     expressJwt = require('express-jwt'),
 	mongoose = require('mongoose'),
-    
+
     // app modules
     config = require('./config/config.js'),
-    
+
     // initialize
     app = express()
         .use(bodyParser.urlencoded({extended: false}))
@@ -25,15 +25,16 @@ var express = require('express'),
             next();
         })
 		.use('/api', expressJwt({secret: config.secret})),
-    
+
     // routes
     authRoute = require('./routes/auth.js')(app),
     userRoutes = require('./routes/user.js')(app),
-    userItemRoutes = require('./routes/userItem.js')(app);
+    userItemRoutes = require('./routes/userItem.js')(app),
+	fishesRoutes = require('./routes/fishes.js')(app);
 	// @@ new catnap routes
 
 
-mongoose.connect(config.database);
+mongoose.connect(config.mongoURL);
 
 app.listen(3000);
 console.log('node-catnap running on port 3000')
